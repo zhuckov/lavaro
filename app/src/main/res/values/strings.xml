@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">lavaro</string>
+    <string name="add_work_experience">Add work experience</string>
+    <string-array name="education">
+        <item>Не указано</item>
+        <item>Среднее неполное</item>
+        <item>Среднее полное</item>
+        <item>Среднее специальное</item>
+        <item>Высшее бакалавриат</item>
+        <item>Высшее магистратура</item>
+    </string-array>
 </resources>
