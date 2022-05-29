@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String years = etYear.getText().toString();
                 String spec =  place + "|" + years + "|" ; // формируем строку
                 allWE += spec ; // добавляем к той что для БД
-
+                etYear.setText("");
+                etPlace.setText("");
                 break;
 
             case R.id.btnAdd:
