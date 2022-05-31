@@ -40,6 +40,24 @@
             android:layout_marginBottom="30px"
             >
         </EditText>
+
+        <EditText
+            android:id="@+id/etJob"
+            android:hint="Job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            >
+        </EditText>
+        <EditText
+            android:id="@+id/etSalary"
+            android:hint="Salary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            >
+        </EditText>
+
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"
@@ -166,6 +184,19 @@
     </LinearLayout>
 
 
+
+        <EditText
+            android:id="@+id/etEmployer"
+            android:hint="Employer test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            />
+        <Button
+            android:id="@+id/btnAddEmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"></Button>
     </LinearLayout>
 
 </ScrollView>
