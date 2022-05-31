@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnAdd, btnRead, btnClear , btnAddWE , btnEmpAdd ; // test  // test  // test  // test  // test  // test  // test
     EditText etName, etSurname ,etEmail , etPlace , etYear , etAboutYou , etCity , etPhone , etEducationPlace , etPassword , etSalary, etJob , etEmp; // test  // test  // test  // test  // test  // test  // test  // test
     String allWE = "";
- /*   String employersList = "" ; */   // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test
+     String employersList = "" ;   // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test
     DBHelper dbHelper;
     String phone, email ;
     Spinner education ;
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 contentValues.put(DBHelper.KEY_WORKEXP, allWE);
 
 
-             /*   contentValues.put(DBHelper.KEY_EMPLOYERS_LIST, employersList); */  // test
+                contentValues.put(DBHelper.KEY_EMPLOYERS_LIST, employersList);  // test  // test // test // test // test // test // test
 
 
 
