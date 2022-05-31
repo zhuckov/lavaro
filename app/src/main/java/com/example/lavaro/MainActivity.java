@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnAdd, btnRead, btnClear , btnAddWE ;
-    EditText etName, etSurname ,etEmail , etPlace , etYear , etAboutYou , etCity , etPhone , etEducationPlace;
+    EditText etName, etSurname ,etEmail , etPlace , etYear , etAboutYou , etCity , etPhone , etEducationPlace , etPassword;
     String allWE = "";
     DBHelper dbHelper;
     String phone, email ;
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         etName = (EditText) findViewById(R.id.etName);
         etSurname = (EditText) findViewById(R.id.etSurname);
+        etPassword = (EditText) findViewById(R.id.etPassword) ;
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPlace = (EditText) findViewById(R.id.etPlace);
         etYear = (EditText) findViewById(R.id.etYear);
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String name = etName.getText().toString();
         String surname = etSurname.getText().toString();
+        String password = etPassword.getText().toString();
         String city = etCity.getText().toString();
         String aboutUser = etAboutYou.getText().toString();
         String educationPlace = etEducationPlace.getText().toString();
@@ -107,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 contentValues.put(DBHelper.KEY_MAIL, email);
                 contentValues.put(DBHelper.KEY_NAME, name);
                 contentValues.put(DBHelper.KEY_SURNAME, surname);
+                contentValues.put(DBHelper.KEY_PASSWORD, password);
                 contentValues.put(DBHelper.KEY_PHONE, phone);
                 contentValues.put(DBHelper.KEY_CITY, city);
                 contentValues.put(DBHelper.KEY_ABOUT, aboutUser);
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
                     int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
                     int surnameIndex = cursor.getColumnIndex(DBHelper.KEY_SURNAME);
+                    int passwordIndex = cursor.getColumnIndex(DBHelper.KEY_PASSWORD);
                     int workExpIndex = cursor.getColumnIndex(DBHelper.KEY_WORKEXP);
                     int emailIndex = cursor.getColumnIndex(DBHelper.KEY_MAIL);
                     int phoneIndex = cursor.getColumnIndex(DBHelper.KEY_PHONE);
@@ -137,6 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 ", city = " + cursor.getString(cityIndex) +
                                 ", name = " + cursor.getString(nameIndex) +
                                 ", surname = " + cursor.getString(surnameIndex) +
+                                ", password = " + cursor.getString(passwordIndex) +
                                 ", education = " + cursor.getString(educationIndex) +
                                 ", education place = " + cursor.getString(educationPlaceIndex) +
                                 ", work experience = " + cursor.getString(workExpIndex) +

@@ -32,7 +32,14 @@
         android:hint="Surname"
         android:layout_marginBottom="30px"
         ></EditText>
-
+        <EditText
+            android:id="@+id/etPassword"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            >
+        </EditText>
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"

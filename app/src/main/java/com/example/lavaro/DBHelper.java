@@ -6,13 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper  extends SQLiteOpenHelper{
 
-    public static final int DATABASE_VERSION = 10;
+    public static final int DATABASE_VERSION = 11;
     public static final String DATABASE_NAME = "contactDb";
     public static final String TABLE_CONTACTS = "contacts";
 
     public static final String KEY_ID = "_id";
     public static final String KEY_NAME = "name";
     public static final String KEY_SURNAME = "surname";
+    public static final String KEY_PASSWORD = "password";
     public static final String KEY_PHONE = "phone";
     public static final String KEY_ABOUT = "about";
     public static final String KEY_CITY = "city";
@@ -29,7 +30,7 @@ public class DBHelper  extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_CONTACTS + "(" + KEY_ID + " integer primary key," + KEY_CITY + " text," + KEY_NAME + " text," + KEY_SURNAME + " text," + KEY_MAIL + " text," + KEY_PHONE + " text,"  + KEY_EDUCATION_PLACE  + " text,"  + KEY_EDUCATION  + " text,"  + KEY_WORKEXP + " text," + KEY_ABOUT + " text" + ")");
+        db.execSQL("create table " + TABLE_CONTACTS + "(" + KEY_ID + " integer primary key," + KEY_CITY + " text," + KEY_NAME + " text," + KEY_SURNAME + " text," + KEY_PASSWORD + " text," + KEY_MAIL + " text," + KEY_PHONE + " text,"  + KEY_EDUCATION_PLACE  + " text,"  + KEY_EDUCATION  + " text,"  + KEY_WORKEXP + " text," + KEY_ABOUT + " text" + ")");
 
     }
 
