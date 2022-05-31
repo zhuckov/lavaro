@@ -6,9 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper  extends SQLiteOpenHelper{
 
-    public static final int DATABASE_VERSION = 14;
+    public static final int DATABASE_VERSION = 25;
     public static final String DATABASE_NAME = "contactDb";
     public static final String TABLE_CONTACTS = "contacts";
+    public static final String TABLE_CONTACTS_EMP = "contactsEmp";
 
     public static final String KEY_ID = "_id";
     public static final String KEY_NAME = "name";
@@ -24,6 +25,9 @@ public class DBHelper  extends SQLiteOpenHelper{
     public static final String KEY_MAIL = "mail";
     public static final String KEY_EDUCATION_PLACE = "education_place";
     public static final String KEY_EDUCATION = "education";
+    public static final String KEY_INFO = "info";
+    public static final String KEY_ORGANIZATION = "organization";
+
 
 
 
@@ -31,16 +35,17 @@ public class DBHelper  extends SQLiteOpenHelper{
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_CONTACTS + "(" + KEY_ID + " integer primary key," + KEY_CITY + " text," + KEY_NAME + " text," + KEY_SURNAME + " text," + KEY_PASSWORD + " text," + KEY_MAIL + " text," + KEY_PHONE +  " text," + KEY_JOB + " text," + KEY_SALARY + " text," + KEY_EDUCATION_PLACE  + " text,"  + KEY_EDUCATION  + " text,"  + KEY_WORKEXP + " text," + KEY_ABOUT + " text," + KEY_EMPLOYERS_LIST  + " text" + ")");
-
+        db.execSQL("create table " + TABLE_CONTACTS_EMP + "(" + KEY_ID + " integer primary key," + KEY_JOB + " text," + KEY_SALARY + " text," + KEY_NAME + " text," + KEY_MAIL + " text," + KEY_PHONE + " text," + KEY_PASSWORD + " text," + KEY_ORGANIZATION + " text," + KEY_INFO + " text" + ")" );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists " + TABLE_CONTACTS);
-
+        db.execSQL("drop table if exists " + TABLE_CONTACTS );
+        db.execSQL("drop table if exists " + TABLE_CONTACTS_EMP );
         onCreate(db);
 
     }

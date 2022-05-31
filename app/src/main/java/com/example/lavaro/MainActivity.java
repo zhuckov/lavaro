@@ -3,6 +3,7 @@ package com.example.lavaro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnAdd, btnRead, btnClear , btnAddWE , btnEmpAdd ; // test  // test  // test  // test  // test  // test  // test
+    Button btnAdd, btnRead, btnClear , btnAddWE , btnEmpAdd  , btnToSecond; // test  // test  // test  // test  // test  // test  // test
     EditText etName, etSurname ,etEmail , etPlace , etYear , etAboutYou , etCity , etPhone , etEducationPlace , etPassword , etSalary, etJob , etEmp; // test  // test  // test  // test  // test  // test  // test  // test
     String allWE = "";
      String employersList = "" ;   // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test
@@ -35,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnEmpAdd = (Button) findViewById(R.id.btnAddEmp);
         btnEmpAdd.setOnClickListener(this); // test  */
         // test  // test  // test  // test  // test  // test  // test  // test  // test  // test
+
+
+        btnToSecond = (Button) findViewById(R.id.btnToSecond) ;
+        btnToSecond.setOnClickListener(this);
+
 
         btnAdd = (Button) findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(this);
@@ -101,6 +107,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // test
                 break; */  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test  // test
 
+            case R.id.btnToSecond:
+                Intent i ;
+                i = new Intent(this , SecondActivity.class) ;
+                startActivity(i);
+                break;
 
             case R.id.btnAddWE:
                 String place = etPlace.getText().toString();
@@ -170,9 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     int aboutYouIndex = cursor.getColumnIndex(DBHelper.KEY_ABOUT);
                     int educationIndex = cursor.getColumnIndex(DBHelper.KEY_EDUCATION);
                     int educationPlaceIndex = cursor.getColumnIndex(DBHelper.KEY_EDUCATION_PLACE);
-
-
-                     int employersListIndex = cursor.getColumnIndex(DBHelper.KEY_EMPLOYERS_LIST);
+                    int employersListIndex = cursor.getColumnIndex(DBHelper.KEY_EMPLOYERS_LIST);
 
 
                     do {
